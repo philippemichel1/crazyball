@@ -28,6 +28,7 @@ struct RenderingView: View {
     var body: some View {
         GeometryReader { geometry in
             Color(.white)
+
             Circle()
                 .fill(listColor[colorBall])
                 .frame(width: 50, height: 50)
@@ -52,6 +53,13 @@ struct RenderingView: View {
                     // arrete le timer lorsque l'on quitte la vue
                     timer?.invalidate()
                     timer = nil
+                    // parametre par défaut en sortant de la vue 
+                    movingDown = true
+                    movingRight = true
+                    valuePositionX = 4
+                    valuePositionY = 4
+                    newPosition = CGPoint(x: 54, y: 80)
+                    position = CGPoint(x: 54, y: 80)
                 }
         }
         .edgesIgnoringSafeArea(.all)

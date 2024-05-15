@@ -8,7 +8,7 @@ import SwiftUI
 
 struct ContentView: View {
     // Position initiale
-    @State private var position = CGPoint(x: 54, y: 31)
+    @State private var position = CGPoint(x: 54, y: 80)
     // bouton du rendu animation
     @State var renderingButton:Bool = false
     // valeur changement de position horizontal de la boule
