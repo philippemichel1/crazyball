@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct RenderingView: View {
-    @Binding var valuePositionX:Int  
-    @Binding var valuePositionY:Int
-    @Binding var newPosition:CGPoint
-    
-    @State private var position = CGPoint(x: 54, y: 80) // Position initiale de la boule
+    // Position initiale de la boule
+    @State private var position = CGPoint(x: 54, y: 80)
+    // tableau de couleurs
     let listColor:[Color] = [.green, .blue, .red, .yellow, .cyan, .orange, .indigo,.mint,.brown, .pink,.purple,.gray,.black]
     @State private var colorBall: Int = 0
-    // déplacement vers la droite
-    @Binding  var movingRight:Bool //= true
-    // déplacement vers le bas
-    @Binding  var movingDown:Bool// = true
+    // déplacement vers la droite définit par le toggle (true)
+    @Binding  var movingRight:Bool
+    // déplacement vers le bas définit pae le toggle (true)
+    @Binding var movingDown:Bool// = true
+    // definit par stepper valeur Y
+    @Binding var valuePositionX:Int
+    // definit par stepper valeur X
+    @Binding var valuePositionY:Int
+    // passe la nouvelle position de la boule si l'utilisateur l'déplacé
+    @Binding var newPosition:CGPoint
+    // déclare une variable de type timer pour pouvoir arreter l'animation
+    @State private var timer:Timer?
     
     var body: some View {
         GeometryReader { geometry in
@@ -39,10 +45,14 @@ struct RenderingView: View {
                     let minY: CGFloat = 25
                     
                     // definit la répetition et la vitesse de la boule
-                    Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+                    timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
                     // appelle la fonction toutes les 0.01 pour mettre à jour la position de la boule.
                         newPosition(minX: minX, minY: minY, maxX: maxX, maxY: maxY)
                     }
+                }.onDisappear{
+                    // arrete le timer lorsque l'on quitte la vue
+                    timer?.invalidate()
+                    timer = nil
                 }
         }
         .edgesIgnoringSafeArea(.all)
