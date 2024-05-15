@@ -33,14 +33,14 @@ struct ContentView: View {
                     .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                     .shadow(radius:10).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
             }
-            
+
             Spacer()
             Form {
-                Section(header: Text("Horizontal")) {
+                Section(header: Text("Horizontale")) {
                     Stepper("Position(x)  \(valuePositionX)", value: $valuePositionX, in: 0...10)
                 } // fin de section
                 
-                Section(header: Text("Vertical")) {
+                Section(header: Text("Verticale")) {
                     Stepper("Position(y)  \(valuePositionY)", value: $valuePositionY, in: 0...10)
                 } // fin de section
                 
