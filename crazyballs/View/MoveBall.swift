@@ -25,13 +25,9 @@ struct MoveBall: View {
                            .onChanged { gesture in 
                                self.position = gesture.location
                                
-                               
-                        
                           }
                             .onEnded({ gesture in
                                 self.position = gesture.location
-                               print(position)
-                                
                             })
                     )
                 VStack {
