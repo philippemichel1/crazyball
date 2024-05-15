@@ -36,7 +36,8 @@ struct MoveBall: View {
                     )
                 VStack {
                     Spacer()
-                    Text("Modifier la position du cercle, pour modifier la position départ.")
+                    Text("Déplacer la position du cercle, pour modifier la position départ.")
+                        .multilineTextAlignment(.leading)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .padding(.horizontal)
                         Spacer()
@@ -44,7 +45,7 @@ struct MoveBall: View {
                         settingP.position = self.position
                         dismiss()
                     } label: {
-                        Text("valider")
+                        Text("Valider")
                     }
                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50)
                     .foregroundColor(.white)
