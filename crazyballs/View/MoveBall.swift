@@ -6,13 +6,67 @@
 //
 
 import SwiftUI
-
 struct MoveBall: View {
+    @Environment(\.dismiss) var dismiss
+    @State private var position = CGPoint(x: 54, y: 80) // Position initiale
+    var settingP:SettingP
+    
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            ZStack {
+                Color(.gray).opacity(0.25)
+                Circle()
+                    .fill(Color.blue)
+                    .frame(width: 50, height: 50)
+                    .position(position)
+                    .gesture(
+                        DragGesture()
+                           .onChanged { gesture in 
+                               self.position = gesture.location
+                               
+                               
+                        
+                          }
+                            .onEnded({ gesture in
+                                self.position = gesture.location
+                               print(position)
+                                
+                            })
+                    )
+                VStack {
+                    Text("Modifier la position du cercle, pour modifier la position départ.")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .padding(.horizontal)
+                        
+                    Button {
+                        settingP.position = self.position
+                        dismiss()
+                    } label: {
+                        Text("valider")
+                    }
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50)
+                    .foregroundColor(.white)
+                    .background(.red)
+                    .cornerRadius(10)
+                }
+                
+            }
+                .onAppear {
+                    //upDatePosition(to: position)
+                    
+                    
+                }
+            
+        }
+        .edgesIgnoringSafeArea(.all)
+    }
+    // retourne la position choisit par l'utilisateur
+    func upDatePosition(to newposition:CGPoint) {
+        position = newposition
     }
 }
 
 #Preview {
-    MoveBall()
+    MoveBall(settingP: SettingP())
 }

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 @Observable
-Class Setting {
+class SettingP {
+    var position:CGPoint = CGPoint(x: 54, y: 80)
     
 }
