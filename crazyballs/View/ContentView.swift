@@ -7,7 +7,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var position = CGPoint(x: 54, y: 31) // Position initiale
+    // Position initiale
+    @State private var position = CGPoint(x: 54, y: 31)
     // bouton du rendu animation
     @State var renderingButton:Bool = false
     // valeur changement de position horizontal de la boule
@@ -22,7 +23,6 @@ struct ContentView: View {
     @State private var movingDown = true
     //creation de l'object de recuperation de la position de la boule
     @State var settingP:SettingP = SettingP()
-    
     
     var body: some View {
         NavigationStack {
@@ -81,7 +81,10 @@ struct ContentView: View {
             .background(.blue)
             .cornerRadius(10)
             .navigationDestination(isPresented: $renderingButton) {
-                RenderingView(valuePositionX: $valuePositionX, valuePositionY: $valuePositionY, newPosition:.constant(CGPoint(x:settingP.position.x,y:settingP.position.y)),movingRight: $movingRight,movingDown: $movingDown)
+                //RenderingView(valuePositionX: $valuePositionX, valuePositionY: $valuePositionY, newPosition:.constant(CGPoint(x:settingP.position.x,y:settingP.position.y)),movingRight: $movingRight,movingDown: $movingDown)
+                RenderingView(movingRight: $movingRight, movingDown: $movingDown, valuePositionX: $valuePositionX, valuePositionY: $valuePositionY, newPosition: .constant(CGPoint(x:settingP.position.x,y:settingP.position.y)))
+                
+              
             }
             .navigationTitle("Paramètrage")
         }

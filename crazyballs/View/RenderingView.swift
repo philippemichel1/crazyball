@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct RenderingView: View {
-    // Position initiale de la boule
-    @State private var position = CGPoint(x: 54, y: 80)
-    // tableau de couleurs
+    @State private var position = CGPoint(x: 54, y: 80)// Position initiale de la boule
     let listColor:[Color] = [.green, .blue, .red, .yellow, .cyan, .orange, .indigo,.mint,.brown, .pink,.purple,.gray,.black]
     @State private var colorBall: Int = 0
-    // déplacement vers la droite définit par le toggle (true)
-    @Binding  var movingRight:Bool
-    // déplacement vers le bas définit pae le toggle (true)
+    // déplacement vers la droite
+    @Binding  var movingRight:Bool //= true
+    // déplacement vers le bas
     @Binding var movingDown:Bool// = true
     // definit par stepper valeur Y
     @Binding var valuePositionX:Int
@@ -23,6 +21,7 @@ struct RenderingView: View {
     @Binding var valuePositionY:Int
     // passe la nouvelle position de la boule si l'utilisateur l'déplacé
     @Binding var newPosition:CGPoint
+    
     // déclare une variable de type timer pour pouvoir arreter l'animation
     @State private var timer:Timer?
     
@@ -105,5 +104,5 @@ struct RenderingView: View {
 
 
 #Preview {
-    RenderingView(valuePositionX: .constant(0), valuePositionY: .constant(0), newPosition: .constant(CGPoint(x: 54, y: 80)),movingRight: .constant(true),movingDown: .constant(true))
-}
+    RenderingView(movingRight: .constant(true), movingDown: .constant(true), valuePositionX: .constant(0), valuePositionY: .constant(0), newPosition: .constant(CGPoint(x: 54, y: 80)))
+    }
