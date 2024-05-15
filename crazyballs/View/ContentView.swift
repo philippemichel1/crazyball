@@ -59,9 +59,6 @@ struct ContentView: View {
                             MoveBall(settingP: self.settingP)
                         }
                     }
-                   
-                       
-                    
                 }
                 
                 Button(action: {

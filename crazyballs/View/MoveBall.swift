@@ -35,10 +35,11 @@ struct MoveBall: View {
                             })
                     )
                 VStack {
+                    Spacer()
                     Text("Modifier la position du cercle, pour modifier la position départ.")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .padding(.horizontal)
-                        
+                        Spacer()
                     Button {
                         settingP.position = self.position
                         dismiss()
@@ -49,6 +50,8 @@ struct MoveBall: View {
                     .foregroundColor(.white)
                     .background(.red)
                     .cornerRadius(10)
+                    .padding(.vertical, 5)
+                
                 }
                 
             }
