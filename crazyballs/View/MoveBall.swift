@@ -16,7 +16,7 @@ struct MoveBall: View {
                 Color(.gray).opacity(0.25)
                         VStack {
                             Spacer()
-                            Text("Déplacer la position du cercle, pour modifier la position départ.")
+                            Text("Déplacer le cercle,avec votre doigt, pour modifier sa position départ.")
                                 .multilineTextAlignment(.leading)
                                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                 .padding(.horizontal)
