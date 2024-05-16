@@ -23,6 +23,8 @@ struct ContentView: View {
     @State private var movingRight = true
     // déplacement vers le bas
     @State private var movingDown = true
+    // conserve la derniere position
+    @State private var keepPosition = false
     //creation de l'object de recuperation de la position de la boule
     @State var settingP:SettingP = SettingP()
     
@@ -72,10 +74,13 @@ struct ContentView: View {
                         .background(.blue)
                         .cornerRadius(10)
                         .fullScreenCover(isPresented: $showViewSetBall) {
-                            MoveBall(settingP: self.settingP)
+                            MoveBall(keepPosition: $keepPosition, settingP: self.settingP)
                         }
                         Spacer()
                     }
+                    Toggle(keepPosition ? "Garder position" : "Position Initiale", isOn: $keepPosition)
+                        .tint(.red)
+                        .foregroundColor(keepPosition ? .red : .primary)
                 }
             }// form
             // affiche le formulaire résultat
@@ -89,7 +94,8 @@ struct ContentView: View {
             .background(.blue)
             .cornerRadius(10)
             .navigationDestination(isPresented: $renderingButton) {
-                RenderingView(movingRight: $movingRight, movingDown: $movingDown, valuePositionX: $valuePositionX, valuePositionY: $valuePositionY, newPosition: .constant(CGPoint(x:settingP.position.x,y:settingP.position.y)))
+               
+                RenderingView(movingRight: $movingRight, movingDown: $movingDown, valuePositionX: $valuePositionX, valuePositionY: $valuePositionY, newPosition: .constant(CGPoint(x:settingP.position.x,y:settingP.position.y)), isKeepPosition: $keepPosition)
             }
             .navigationTitle("Paramètrage")
         }

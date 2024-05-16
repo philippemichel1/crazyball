@@ -8,7 +8,10 @@
 import SwiftUI
 struct MoveBall: View {
     @Environment(\.dismiss) var dismiss
-    @State private var position = CGPoint(x: 54, y: 80) // Position initiale
+    // Position initiale
+    @State private var position = CGPoint(x: 54, y: 80)
+    // garder position (Toggle)
+    @Binding var keepPosition:Bool
     var settingP:SettingP
     
     var body: some View {
@@ -50,7 +53,10 @@ struct MoveBall: View {
                                 )
                         }
             }
-                .onAppear {
+            .onAppear {
+                if keepPosition == true {
+                    self.position = settingP.position
+                }
         }
         .edgesIgnoringSafeArea(.all)
     }
@@ -58,5 +64,5 @@ struct MoveBall: View {
 }
 
 #Preview {
-    MoveBall(settingP: SettingP())
+    MoveBall(keepPosition: .constant(false), settingP: SettingP())
 }

@@ -22,13 +22,15 @@ struct RenderingView: View {
     // passe la nouvelle position de la boule si l'utilisateur l'déplacé
     @Binding var newPosition:CGPoint
     
+    @Binding var isKeepPosition:Bool
+    
     // déclare une variable de type timer pour pouvoir arreter l'animation
     @State private var timer:Timer?
     
     var body: some View {
         GeometryReader { geometry in
             Color(.white)
-
+            
             Circle()
                 .fill(listColor[colorBall])
                 .frame(width: 50, height: 50)
@@ -37,7 +39,11 @@ struct RenderingView: View {
                     // Initialisation de colorBall avec un index de couleur aléatoire au démarrage.
                     colorBall = colorRandom()
                     // nouvelle position de départ
-                    position = newPosition
+                    if isKeepPosition == true {
+                        position = newPosition
+                    }  else {
+                        position = CGPoint(x: 54, y: 80)
+                    }
                     //print(position)
                     // Calcul des limites maximales et minimales pour le mouvement de la boule, en prenant en compte sa taille.
                     let maxX = geometry.size.width - 25
@@ -47,21 +53,19 @@ struct RenderingView: View {
                     
                     // definit la répetition et la vitesse de la boule
                     timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
-                    // appelle la fonction toutes les 0.01 pour mettre à jour la position de la boule.
+                        // appelle la fonction toutes les 0.01 pour mettre à jour la position de la boule.
                         newPosition(minX: minX, minY: minY, maxX: maxX, maxY: maxY)
                     }
                 }.onDisappear{
                     // arrete le timer lorsque l'on quitte la vue
                     timer?.invalidate()
                     timer = nil
-                    // parametre par défaut en sortant de la vue 
+                    // parametre par défaut en sortant de la vue sauf la
+                    // position de la ball
                     movingDown = true
                     movingRight = true
                     valuePositionX = 4
                     valuePositionY = 4
-                    position = CGPoint(x: 54.0, y: 80.0)
-                   // print("init position : \(position)")
-                    
                 }
         }
         .edgesIgnoringSafeArea(.all)
@@ -111,8 +115,6 @@ struct RenderingView: View {
     }
 }
 
-
-
 #Preview {
-    RenderingView(movingRight: .constant(true), movingDown: .constant(true), valuePositionX: .constant(0), valuePositionY: .constant(0), newPosition: .constant(CGPoint(x: 54, y: 80)))
-    }
+    RenderingView(movingRight: .constant(true), movingDown: .constant(true), valuePositionX: .constant(0), valuePositionY: .constant(0), newPosition: .constant(CGPoint(x: 54, y: 80)), isKeepPosition: .constant(false))
+}
