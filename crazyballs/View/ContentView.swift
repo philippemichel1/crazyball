@@ -37,11 +37,11 @@ struct ContentView: View {
             Spacer()
             Form {
                 Section(header: Text("Horizontale")) {
-                    Stepper("Position(x)  \(valuePositionX)", value: $valuePositionX, in: 0...10)
+                    Stepper("Position(x)  \(valuePositionX)", value: $valuePositionX, in: 0...20)
                 } // fin de section
                 
                 Section(header: Text("Verticale")) {
-                    Stepper("Position(y)  \(valuePositionY)", value: $valuePositionY, in: 0...10)
+                    Stepper("Position(y)  \(valuePositionY)", value: $valuePositionY, in: 0...20)
                 } // fin de section
                 
                 Section(header:Text("Direction")) {
@@ -51,13 +51,13 @@ struct ContentView: View {
                         .tint(.blue)
                 } // Fin de section
                 
-                Section(header:Text("Position Ball")) {
+                Section(header:Text("Position de la balle")) {
                     HStack {
                         Spacer()
                         Button(action: {
                             self.showViewSetBall.toggle()
                         }, label: {
-                            Text("Position de départ de la Boule")
+                            Text("Position de départ de la balle")
                         })
                         .padding()
                         .foregroundColor(.white)
