@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		370C9AD72BF252120051E28E /* MoveBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveBall.swift; sourceTree = "<group>"; };
 		373720852BF3C60F00E31A70 /* SettingP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingP.swift; sourceTree = "<group>"; };
-		3751229C2BEF901F0064DBD2 /* crazyballs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crazyballs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3751229C2BEF901F0064DBD2 /* crazyball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crazyball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3751229F2BEF901F0064DBD2 /* crazyballsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crazyballsApp.swift; sourceTree = "<group>"; };
 		375122A12BEF901F0064DBD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		375122A32BEF90210064DBD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		3751229D2BEF901F0064DBD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3751229C2BEF901F0064DBD2 /* crazyballs.app */,
+				3751229C2BEF901F0064DBD2 /* crazyball.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3751229B2BEF901F0064DBD2 /* crazyballs */ = {
+		3751229B2BEF901F0064DBD2 /* crazyball */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 375122AA2BEF90210064DBD2 /* Build configuration list for PBXNativeTarget "crazyballs" */;
+			buildConfigurationList = 375122AA2BEF90210064DBD2 /* Build configuration list for PBXNativeTarget "crazyball" */;
 			buildPhases = (
 				375122982BEF901F0064DBD2 /* Sources */,
 				375122992BEF901F0064DBD2 /* Frameworks */,
@@ -107,9 +107,9 @@
 			);
 			dependencies = (
 			);
-			name = crazyballs;
+			name = crazyball;
 			productName = crazyballs;
-			productReference = 3751229C2BEF901F0064DBD2 /* crazyballs.app */;
+			productReference = 3751229C2BEF901F0064DBD2 /* crazyball.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +127,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 375122972BEF901F0064DBD2 /* Build configuration list for PBXProject "crazyballs" */;
+			buildConfigurationList = 375122972BEF901F0064DBD2 /* Build configuration list for PBXProject "crazyball" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -140,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3751229B2BEF901F0064DBD2 /* crazyballs */,
+				3751229B2BEF901F0064DBD2 /* crazyball */,
 			);
 		};
 /* End PBXProject section */
@@ -353,7 +353,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		375122972BEF901F0064DBD2 /* Build configuration list for PBXProject "crazyballs" */ = {
+		375122972BEF901F0064DBD2 /* Build configuration list for PBXProject "crazyball" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				375122A82BEF90210064DBD2 /* Debug */,
@@ -362,7 +362,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		375122AA2BEF90210064DBD2 /* Build configuration list for PBXNativeTarget "crazyballs" */ = {
+		375122AA2BEF90210064DBD2 /* Build configuration list for PBXNativeTarget "crazyball" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				375122AB2BEF90210064DBD2 /* Debug */,

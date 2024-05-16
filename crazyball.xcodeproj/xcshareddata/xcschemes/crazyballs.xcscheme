@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3751229B2BEF901F0064DBD2"
-               BuildableName = "crazyballs.app"
-               BlueprintName = "crazyballs"
-               ReferencedContainer = "container:crazyballs.xcodeproj">
+               BuildableName = "crazyball.app"
+               BlueprintName = "crazyball"
+               ReferencedContainer = "container:crazyball.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3751229B2BEF901F0064DBD2"
-            BuildableName = "crazyballs.app"
-            BlueprintName = "crazyballs"
-            ReferencedContainer = "container:crazyballs.xcodeproj">
+            BuildableName = "crazyball.app"
+            BlueprintName = "crazyball"
+            ReferencedContainer = "container:crazyball.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -69,9 +69,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3751229B2BEF901F0064DBD2"
-            BuildableName = "crazyballs.app"
-            BlueprintName = "crazyballs"
-            ReferencedContainer = "container:crazyballs.xcodeproj">
+            BuildableName = "crazyball.app"
+            BlueprintName = "crazyball"
+            ReferencedContainer = "container:crazyball.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
