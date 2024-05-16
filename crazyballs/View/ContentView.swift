@@ -7,6 +7,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    // Variable environnement
+    @Environment(\.openURL) private var openURL
     // Position initiale
     @State private var position = CGPoint(x: 54, y: 80)
     // bouton du rendu animation
@@ -27,13 +29,19 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack{
-                Image("titastus")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    .shadow(radius:10).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                Button {
+                    if let url = URL(string: "https://www.titastus.com") {
+                        openURL(url)
+                    }
+                } label: {
+                    Image("titastus")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .shadow(radius:10).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                }
             }
-
+            
             Spacer()
             Form {
                 Section(header: Text("Horizontale")) {
