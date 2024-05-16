@@ -81,10 +81,7 @@ struct ContentView: View {
             .background(.blue)
             .cornerRadius(10)
             .navigationDestination(isPresented: $renderingButton) {
-                // affiche la vue animation de la boule
                 RenderingView(movingRight: $movingRight, movingDown: $movingDown, valuePositionX: $valuePositionX, valuePositionY: $valuePositionY, newPosition: .constant(CGPoint(x:settingP.position.x,y:settingP.position.y)))
-                
-              
             }
             .navigationTitle("Paramètrage")
         }

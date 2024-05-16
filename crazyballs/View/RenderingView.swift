@@ -38,6 +38,7 @@ struct RenderingView: View {
                     colorBall = colorRandom()
                     // nouvelle position de départ
                     position = newPosition
+                    print(position)
                     // Calcul des limites maximales et minimales pour le mouvement de la boule, en prenant en compte sa taille.
                     let maxX = geometry.size.width - 25
                     let maxY = geometry.size.height - 25
@@ -58,8 +59,9 @@ struct RenderingView: View {
                     movingRight = true
                     valuePositionX = 4
                     valuePositionY = 4
-                    newPosition = CGPoint(x: 54, y: 80)
-                    position = CGPoint(x: 54, y: 80)
+                    position = CGPoint(x: 54.0, y: 80.0)
+                    print("init position : \(position)")
+                    
                 }
         }
         .edgesIgnoringSafeArea(.all)
