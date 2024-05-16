@@ -45,10 +45,10 @@ struct MoveBall: View {
                                     DragGesture()
                                        .onChanged { gesture in
                                            self.position = gesture.location
-                                           
                                       }
                                         .onEnded({ gesture in
                                             self.position = gesture.location
+                                            keepPosition = true
                                         })
                                 )
                         }
