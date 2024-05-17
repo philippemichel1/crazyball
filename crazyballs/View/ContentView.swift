@@ -78,7 +78,7 @@ struct ContentView: View {
                         }
                         Spacer()
                     }
-                    Toggle(keepPosition ? "Garder position" : "Position Initiale", isOn: $keepPosition)
+                    Toggle(keepPosition ? "Garder la position" : "Position Initiale", isOn: $keepPosition)
                         .tint(.red)
                         .foregroundColor(keepPosition ? .red : .primary)
                 }

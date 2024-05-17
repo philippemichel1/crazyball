@@ -3,7 +3,6 @@
 //  crazyballs
 //
 //  Created by Philippe MICHEL on 13/05/2024.
-//
 
 import SwiftUI
 struct MoveBall: View {
@@ -60,7 +59,6 @@ struct MoveBall: View {
         }
         .edgesIgnoringSafeArea(.all)
     }
-    
 }
 
 #Preview {
